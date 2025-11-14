@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/NCases.iml" filepath="$PROJECT_DIR$/.idea/modules/NCases.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/NCases.main.iml" filepath="$PROJECT_DIR$/.idea/modules/NCases.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/NCases.test.iml" filepath="$PROJECT_DIR$/.idea/modules/NCases.test.iml" />
     </modules>
