@@ -1,0 +1,183 @@
+# Типы - SQLite, MySQL
+dataBaseType: SQLite
+# В случае с MySQL
+host: "localhost"
+port: 3306
+schema: "table"
+username: "root"
+password: "root"
+
+
+hideHolograms: true
+holograms:
+  cmd_case_test:
+    - "&7&k|||| &e&lКЕЙС С ДОНАТОМ &7&k||||"
+  vault_case_test:
+    - "&7&k|||| &e&lКЕЙС С ВАЛЮТОЙ &7&k||||"
+  point_case_test:
+    - "&7&k|||| &e&lКЕЙС С РИЛИКАМИ &7&k||||"
+
+# Сообщения
+# %case% - название кейса из конфига
+# %amount% - количество
+# %player% - игрок
+messages:
+  config_reloaded:
+    - "Конфиг перезагружен!"
+  case_open:
+    - "Вы открыли кейс %case%!"
+  case_reserved:
+    - "Кейс занят!"
+  not_keys:
+    - "У вас нет ключей!"
+  takeCase:
+    - "Вы забрали у игрока %player% %amount% ключей от кейса %case%"
+  setCase:
+    - "У игрока %player% добавлено %amount% кейсов типа %case%"
+  lookCase:
+    - "У игрока %player% обнаружены кейсы %case% в количестве %amount%"
+  not_permission:
+    - "У вас не найдено прав на действие!"
+  givedCases:
+    - "Вы получили %amount% кейсов типа %case%"
+
+# Сами кейсы
+# Типы: VAULT, CMD, POINTS
+
+cases:
+  # Пример кейса с командами
+  cmd_case_test:
+    title: "cmd_case_test"
+    type: "cmd"
+    # Как будет повернута анимация (X, Y, Z)
+    animation_direction: "x"
+    # Настройки локации
+    location:
+      world: "world"
+      x: 101
+      y: 101
+      z: 101
+    animation_info:
+      # Звук, который воспроизводится при открытии
+      sound: "UI_BUTTON_CLICK"
+      # Звук при окончании открытия
+      endSound: "ENTITY_ITEM_PICKUP"
+      # Радиус круга из предметов
+      radius: 1.5
+      # Время одного поворота
+      rotateTime: 3
+      # Скорость предмета
+      itemsSpeed: 11.5
+      particleSpeed: 8
+      # Кол-во предметов в круге
+      itemsOnRound: 8
+    # Сами предметы (КОГДА УКАЗЫВАЕТЕ, УЧИТЫВАЙТЕ - ШАНС ДОЛЖЕН БЫТЬ РАВЕН 100, В ИНОМ СЛУЧАЕ РАНДОМИЗАТОР ВЫКИНЕТ ОШИБКУ!)
+    hero_donate:
+      title: "&9&lHERO"
+      material: "PLAYER_HEAD"
+      texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2VkMWBiYTczZjYzOWY0YmM0MjJkNDgxOTZjNzE1MTk3YmUyNzEyYzNiOTYyYzk3ZWJmOWU5ZWQ4ZWZhMDI1In19fQ=="
+      chance: 10
+      command:
+        - "lp user %player% parent add hero"
+        - "bc;&6&l&nИгрок %player% выиграл донат &9&lHERO"
+    titan_donate:
+      title: "&e&lTITAN"
+      material: "YELLOW_SHULKER_BOX"
+      chance: 10
+      command:
+        - "lp user %player% parent add titan"
+        - "bc;&6&l&nИгрок %player% выиграл донат &e&lTITAN"
+    avenger_donate:
+      title: "&a&lAVENGER"
+      material: "LIME_SHULKER_BOX"
+      chance: 10
+      # Команды при выдаче приза, есть у каждого предмета, если не указаны - в консоль ничего не напишет
+      command:
+        - "lp user %player% parent add avenger"
+        - "bc;&6&l&nИгрок %player% выиграл донат &a&lAVENGER"
+    overlord_donate:
+      title: "&b&lOVERLORD"
+      material: "CYAN_SHULKER_BOX"
+      chance: 10
+      command:
+        - "lp user %player% parent add overlord"
+        - "bc;&6&l&nИгрок %player% выиграл донат &b&lOVERLORD"
+    magister_donate:
+      title: "&6&lMAGISTER"
+      material: "ORANGE_SHULKER_BOX"
+      chance: 10
+      command:
+        - "lp user %player% parent add magister"
+        - "bc;&6&l&nИгрок %player% выиграл донат &6&lMAGISTER"
+    imperator_donate:
+      title: "&c&lIMPERATOR"
+      modelData: 10001
+      material: "RED_SHULKER_BOX"
+      chance: 25
+      command:
+        - "lp user %player% parent add imperator"
+        - "bc;&6&l&nИгрок %player% выиграл донат &c&lIMPERATOR"
+    dragon_donate:
+      title: "&d&lDRAGON"
+      material: "MAGENTA_SHULKER_BOX"
+      chance: 25
+      command:
+        - "lp user %player% parent add dragon"
+        - "bc;&6&l&nИгрок %player% выиграл донат &d&lDRAGON"
+
+
+  # Пример кейса с валютой
+  vault_case_test:
+    title: "vault_case_test"
+    type: "vault"
+    animation_direction: "x"
+    location:
+      world: "world"
+      x: 100
+      y: 100
+      z: 100
+    animation_info:
+      sound: "UI_BUTTON_CLICK"
+      endSound: "ENTITY_ITEM_PICKUP"
+      radius: 1.5
+      rotateTime: 3
+      itemsSpeed: 11.5
+      particleSpeed: 8
+      itemsOnRound: 8
+    10000:
+      title: "10000"
+      material: "GOLD_NUGGET"
+      chance: 60
+      # Команды не указаны, значит просто выдаст 10к монет, если хотите сообщение - указывайте команду
+    50000:
+      title: "50000"
+      material: "GOLD_NUGGET"
+      chance: 40
+
+
+  # Пример кейса с поинтами
+  point_case_test:
+    title: "point_case_test"
+    type: "points"
+    animation_direction: "x"
+    location:
+      world: "world"
+      x: 102
+      y: 102
+      z: 102
+    animation_info:
+      sound: "UI_BUTTON_CLICK"
+      endSound: "ENTITY_ITEM_PICKUP"
+      radius: 1.5
+      rotateTime: 3
+      itemsSpeed: 11.5
+      particleSpeed: 8
+      itemsOnRound: 8
+    100:
+      title: "100"
+      material: "GOLD_NUGGET"
+      chance: 60
+    500:
+      title: "500"
+      material: "GOLD_NUGGET"
+      chance: 40

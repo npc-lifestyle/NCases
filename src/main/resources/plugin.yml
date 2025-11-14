@@ -1,0 +1,12 @@
+name: NCases
+version: '1'
+main: wtf.n1zamu.NCases
+api-version: '1.16'
+
+depend: [Vault, PlayerPoints, DecentHolograms]
+
+commands:
+  ncase:
+    aliases: [ncase]
+  cases:
+    aliases: [cases]
