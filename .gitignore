@@ -1,7 +1,0 @@
-.skidfuscator
-build
-.gradle
-mappings
-skidfuscator.log
-.idea
-.gitignore
