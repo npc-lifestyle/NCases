@@ -12,8 +12,8 @@ import wtf.n1zamu.listener.GUIListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import wtf.n1zamu.utility.animation.Animation;
-import wtf.n1zamu.utility.hologram.HologramManager;
-import wtf.n1zamu.utility.message.MessageManager;
+import wtf.n1zamu.manager.HologramManager;
+import wtf.n1zamu.manager.MessageManager;
 
 import java.util.ArrayList;
 import java.util.Arrays;

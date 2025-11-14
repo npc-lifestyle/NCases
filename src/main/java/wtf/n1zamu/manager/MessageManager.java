@@ -1,4 +1,4 @@
-package wtf.n1zamu.utility.message;
+package wtf.n1zamu.manager;
 
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.ConfigurationSection;

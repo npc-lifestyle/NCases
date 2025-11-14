@@ -34,10 +34,6 @@ public class ConfigurationItem {
             this.modelData = section.getInt("modelData");
     }
 
-    public ItemStack build() {
-        return this.build(new HashMap<>());
-    }
-
     public ItemStack build(Map<String, String> placeholders) {
         ItemStack itemStack = new ItemStack(this.material);
         ItemMeta itemMeta = itemStack.getItemMeta();

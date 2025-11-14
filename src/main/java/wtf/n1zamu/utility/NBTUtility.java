@@ -16,6 +16,5 @@ public class NBTUtility {
 
     public static boolean hasItemNBT(ItemStack item, String key) {
         return item.hasItemMeta() && item.getItemMeta().getPersistentDataContainer().has(new NamespacedKey(NCases.getInstance(), key), PersistentDataType.STRING);
-
     }
 }

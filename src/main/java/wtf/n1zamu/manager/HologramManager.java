@@ -1,4 +1,4 @@
-package wtf.n1zamu.utility.hologram;
+package wtf.n1zamu.manager;
 
 import eu.decentsoftware.holograms.api.DHAPI;
 import eu.decentsoftware.holograms.api.holograms.Hologram;
