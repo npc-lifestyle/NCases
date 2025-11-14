@@ -1,6 +1,5 @@
 package wtf.n1zamu.gui.impl;
 
-import rip.jnic.nativeobfuscator.Native;
 import wtf.n1zamu.NCases;
 import wtf.n1zamu.crate.Crate;
 import wtf.n1zamu.gui.InventoryGUI;
@@ -27,7 +26,6 @@ public class CaseOpenGUI extends InventoryGUI {
         return null;
     }
 
-    @Native
     @Override
     public Inventory show(CustomInventoryHolder holder, Player player) {
         Inventory inventory = Bukkit.createInventory(holder, 54, this.getTitle());
@@ -42,7 +40,6 @@ public class CaseOpenGUI extends InventoryGUI {
         return inventory;
     }
 
-    @Native
     @Override
     public void onClick(InventoryClickEvent event) {
         event.setCancelled(true);

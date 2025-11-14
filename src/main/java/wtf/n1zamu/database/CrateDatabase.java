@@ -2,7 +2,6 @@ package wtf.n1zamu.database;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
-import rip.jnic.nativeobfuscator.Native;
 import wtf.n1zamu.NCases;
 import wtf.n1zamu.database.impl.MySQLDataBase;
 import wtf.n1zamu.database.impl.SQLiteDataBase;
@@ -20,7 +19,6 @@ public class CrateDatabase {
     private final boolean isSQLite;
     private final String tableName = "crates";
 
-    @Native
     public CrateDatabase() {
         DataBase dataBase = getDataBaseByName(NCases.getInstance().getConfig().getString("dataBaseType"));
         this.isSQLite = dataBase instanceof SQLiteDataBase;
@@ -103,7 +101,6 @@ public class CrateDatabase {
     }
 
 
-    @Native
     public Map<String, Integer> getAllKeys(String playerName) {
         Map<String, Integer> hashMap = new HashMap<>();
         String sql = "SELECT case_name, amount FROM " + tableName + " WHERE player = ?";
@@ -121,7 +118,6 @@ public class CrateDatabase {
         return hashMap;
     }
 
-    @Native
     public int getKeys(String playerName, String caseName) {
         String cacheKey = playerName + "-" + caseName;
         Integer cached = recordCache.getIfPresent(cacheKey);
@@ -143,7 +139,6 @@ public class CrateDatabase {
         return 0;
     }
 
-    @Native
     public void updateKeyAmount(String playerName, String caseName, int amount) {
         recordCache.put(playerName + "-" + caseName, amount);
         String upsertSQL;

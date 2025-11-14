@@ -1,6 +1,5 @@
 package wtf.n1zamu.gui;
 
-import rip.jnic.nativeobfuscator.Native;
 import wtf.n1zamu.NCases;
 import wtf.n1zamu.crate.Crate;
 import wtf.n1zamu.gui.impl.CaseOpenGUI;
@@ -43,7 +42,7 @@ public class InventoryGUIManager {
         return this.guis.get(id).show(new CustomInventoryHolder(id));
     }
 
-    @Native
+
     public Inventory show(String id, Crate crate, Player player) {
         return this.guis.get(id).show(new CustomInventoryHolder(id, crate), player);
     }

@@ -1,7 +1,6 @@
 package wtf.n1zamu.gui;
 
 import org.bukkit.ChatColor;
-import rip.jnic.nativeobfuscator.Native;
 import wtf.n1zamu.NCases;
 import wtf.n1zamu.gui.holder.CustomInventoryHolder;
 import org.bukkit.Bukkit;
@@ -19,7 +18,6 @@ public abstract class InventoryGUI {
     private String title;
     protected final Map<String, ConfigurationItem> items;
 
-    @Native
     public InventoryGUI(String id) {
         this.id = id;
         this.items = new HashMap<>();

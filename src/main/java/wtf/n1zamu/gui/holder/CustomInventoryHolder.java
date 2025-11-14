@@ -1,7 +1,6 @@
 package wtf.n1zamu.gui.holder;
 
 import com.google.common.collect.ImmutableMap;
-import rip.jnic.nativeobfuscator.Native;
 import wtf.n1zamu.crate.Crate;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
@@ -25,7 +24,6 @@ public class CustomInventoryHolder implements InventoryHolder {
         this.data = data;
     }
 
-    @Native
     public CustomInventoryHolder(String id, Crate crate) {
         this(id, ImmutableMap.<String, Object>builder().put("case", crate).build());
     }

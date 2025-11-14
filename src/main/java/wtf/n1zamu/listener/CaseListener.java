@@ -1,6 +1,5 @@
 package wtf.n1zamu.listener;
 
-import rip.jnic.nativeobfuscator.Native;
 import wtf.n1zamu.NCases;
 import wtf.n1zamu.crate.Crate;
 import org.bukkit.block.Block;
@@ -13,7 +12,6 @@ import org.bukkit.inventory.EquipmentSlot;
 import java.util.*;
 
 public class CaseListener implements Listener {
-    @Native
     @EventHandler
     public void onPlayerInteractEvent(PlayerInteractEvent event) {
         if (event.getHand() == null) {

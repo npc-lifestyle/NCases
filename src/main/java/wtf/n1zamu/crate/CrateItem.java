@@ -8,7 +8,6 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
-import rip.jnic.nativeobfuscator.Native;
 import wtf.n1zamu.utility.NMSUtil;
 
 import java.lang.reflect.InvocationTargetException;
@@ -100,7 +99,6 @@ public class CrateItem {
         return itemStack;
     }
 
-    @Native
     public static CrateItem deserialize(ConfigurationSection section) {
         if (!section.contains("title") || !section.contains("material") || !section.contains("chance")) {
             return null;

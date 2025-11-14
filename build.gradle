@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id("dev.skidfuscator") version "0.1.4"
 }
 
 group = 'wtf'
@@ -26,9 +25,6 @@ repositories {
     }
 }
 
-skidfuscator {
-    skidfuscatorVersion = "latest"
-}
 
 dependencies {
     compileOnly "com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT"
